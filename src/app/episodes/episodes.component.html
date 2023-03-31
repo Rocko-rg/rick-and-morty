@@ -1,0 +1,28 @@
+
+<div class="main">
+    <div class="main-header">
+        <h1><i class="fa-solid fa-clapperboard"></i> Rick And Morty Episodes</h1>
+        <div class="filters-div">
+            <div class="div1">
+                <i class="fa-solid fa-clapperboard"></i>
+                <select [(ngModel)]="episode"  (change)="episodeFilters()">
+                    <option value=""disabled selected hidden>Search by Episode</option>
+                    <option value="">All</option>
+                    <option *ngFor="let i of episodesArr1" value="{{i.episode}}">{{i.episode}}</option>
+                </select>
+            </div>
+            <div class="div2">
+                <i class="fa-regular fa-calendar"></i>
+                <select [(ngModel)]="air_date" (change)="air_dataFilters()">
+                    <option value=""disabled selected hidden>Search by Air Date</option>
+                    <option value="">All</option>
+                    <option *ngFor="let i of episodesArr1" value="{{i.air_date}}">{{i.air_date}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <app-card-episodes *ngFor="let i of episodesArr" [info]="i"></app-card-episodes>
+    </div>
+    <app-pagination [info]="pageURLs" (pageEmitter)="NextPrevPagesSubscriber($event)"></app-pagination>
+</div>

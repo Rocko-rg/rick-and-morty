@@ -1,0 +1,118 @@
+.main{
+    width: 100%;
+}
+.main-header{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+h1{
+    width: 100%;
+    font-size: 28px;
+    margin: 0;
+}
+.filters-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.div1, .div2, .div3{
+    width: 32%;
+}
+.filters-div i{
+    position: absolute;
+    margin: 12px 0 0 12px;
+    font-size: 18px;
+}
+.filters-div input{
+    width: 100%;
+    height: 40px;
+    padding: 0 20px 0 45px;
+    background-color: #161d2f;
+    border: 2px solid #161d2f;
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s;
+}
+::placeholder{
+    color: #93949780;
+}
+.filters-div input:focus{
+    outline: none;
+    border-bottom: 2px solid #fc4747;
+}
+.filters-div select{
+    width: 100%;
+    height: 40px;
+    padding: 0 20px 0 45px;
+    appearance: none;
+    background-color: #161d2f;
+    border: 2px solid #161d2f;
+    border-radius: 5px;
+    color: #93949780;
+    cursor: pointer;
+}
+.filters-div select:focus{
+    outline: none;
+    border-bottom: 2px solid #fc4747;
+}
+
+.main-content{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    h1{
+        font-size: 24px;
+    }
+    .filters-div{
+        flex-wrap: wrap;
+        margin: 30px 0;
+    }
+    .filters-div i{
+        font-size: 16px;
+        margin: 10px 0 0 12px;
+    }
+    .filters-div input, .filters-div select{
+        height: 35px;
+        border-radius: 4px;
+    }
+    ::placeholder{
+        font-size: 14px;
+    }
+    .div1{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .div2, .div3{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .div1{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .div2{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .div3{
+        width: 100%;
+    }
+    app-card-characters{
+        width: 50%;
+    }
+}

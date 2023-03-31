@@ -1,0 +1,8 @@
+<div class="main">
+    <div class="main-header">
+        <h1><i class="fa-solid fa-user"></i> {{characterName}} - Alters</h1>
+    </div>
+    <div class="main-content">
+        <app-card-alters *ngFor="let i of alters" [info]="i"></app-card-alters>
+    </div>
+</div>

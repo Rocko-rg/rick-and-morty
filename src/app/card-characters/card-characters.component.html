@@ -1,0 +1,16 @@
+
+<div class="card">
+    <a routerLink="/alters" (click)="alters()"><i class="fa-solid fa-users"></i></a>
+    <img [src]="info.image" class="card-img-top">
+    <div class="card-body p-0">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fa-solid fa-fingerprint"></i>{{info.species}}</li>
+            
+            <li class="list-group-item"><i class="fa-solid fa-venus-mars"></i>{{info.gender}}</li>
+            
+            <li class="list-group-item"><i class="fa-solid fa-shield-heart"></i>{{info.status}}</li>
+        </ul>
+      <h5 class="card-title">{{info.name}}</h5>
+      <p class="card-text">{{info.location.name}}</p>
+    </div>
+</div>

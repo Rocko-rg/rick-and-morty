@@ -1,0 +1,8 @@
+
+<div class="pages">
+    <button [ngClass]="{'disabled-button': page == 1}" [disabled]="page == 1" (click)="prevPage()">Prev</button>
+    <div>{{page}} / {{info[2]}}</div>
+    <button  [ngClass]="{'disabled-button': page == info[2]}" [disabled]="page == info[2]" (click)="nextPage()">Next</button>
+</div>
+
+

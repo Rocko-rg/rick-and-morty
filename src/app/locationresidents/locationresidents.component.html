@@ -1,0 +1,9 @@
+
+<div class="main">
+    <div class="main-header">
+        <h1><i class="fa-solid fa-map-location-dot"></i> {{locationName}} - Residents</h1>
+    </div>
+    <div class="main-content">
+        <app-card-characters *ngFor="let i of arr" [info]="i"></app-card-characters>
+    </div>
+</div>

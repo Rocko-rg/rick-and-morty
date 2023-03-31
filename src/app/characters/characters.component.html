@@ -1,0 +1,33 @@
+
+<div class="main">
+    <div class="main-header">
+        <h1><i class="fa-solid fa-user"></i> Rick And Morty Characters</h1>
+        <div class="filters-div">
+            <div class="div1">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input [(ngModel)]="name" type="text" placeholder="Search by Name" (keyup)="search()">
+            </div>
+            <div class="div2">
+                <i class="fa-solid fa-fingerprint"></i>
+                <select [(ngModel)]="species" (change)="filters()">
+                    <option value=""disabled selected hidden>Search by Species</option>
+                    <option value="">All</option>
+                    <option *ngFor="let i of speciesArr" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+            <div class="div3">
+                <i class="fa-solid fa-venus-mars"></i>
+                <select [(ngModel)]="gender" (change)="filters()">
+                    <option value=""disabled selected hidden>Search by Gender</option>
+                    <option value="">All</option>
+                    <option *ngFor="let i of genderArr" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <app-card-characters *ngFor="let i of charactersArr" [info]="i"></app-card-characters>
+    </div>
+    <app-pagination [info]="pageURLs" (pageEmitter)="NextPrevPagesSubscriber($event)"></app-pagination>
+</div>
+

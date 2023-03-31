@@ -1,0 +1,20 @@
+
+<div class="main">
+    <div class="main-header">
+        <h1><i class="fa-solid fa-map-location-dot"></i> Rick And Morty Locations</h1>
+        <div class="filters-div">
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <select [(ngModel)]="type"  (change)="filters()">
+                    <option value=""disabled selected hidden>Search by Type</option>
+                    <option value="">All</option>
+                    <option *ngFor="let i of typeArr" value="{{i}}">{{i}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <app-card-locations *ngFor="let i of locationsArr" [info]="i"></app-card-locations>
+    </div>
+    <app-pagination [info]="pageURLs" (pageEmitter)="NextPrevPagesSubscriber($event)"></app-pagination>
+</div>
